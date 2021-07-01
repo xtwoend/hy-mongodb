@@ -1,0 +1,31 @@
+{
+    "name": "xtwoend/hy-mongodb",
+    "description": "Mongodb Model for Hyperf Framework",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Abdul Hafidz Anshari",
+            "email": "aditans88@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "hyperf/database": "~2.1.0",
+        "hyperf/db-connection": "~2.1.0",
+        "mongodb/mongodb": "^1.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "Xtwoend\\HyMongo\\": "src/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        },
+        "hyperf": {
+            "config": "Xtwoend\\HyMongo\\ConfigProvider"
+        }
+    }
+}
