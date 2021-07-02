@@ -3,6 +3,7 @@
 namespace Xtwoend\HyMongo\Relations;
 
 use Hyperf\Database\Model\Builder;
+use Hyperf\Database\Model\Relations\Constraint;
 use Hyperf\Database\Model\Model as EloquentModel;
 
 class BelongsTo extends \Hyperf\Database\Model\Relations\BelongsTo
@@ -21,7 +22,7 @@ class BelongsTo extends \Hyperf\Database\Model\Relations\BelongsTo
      */
     public function addConstraints()
     {
-        if (static::$constraints) {
+        if (Constraint::isConstraint()) {
             // For belongs to relationships, which are essentially the inverse of has one
             // or has many relationships, we need to actually query on the primary key
             // of the related models matching on the foreign key that's on a parent.

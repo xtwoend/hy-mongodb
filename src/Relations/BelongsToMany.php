@@ -4,9 +4,10 @@ namespace Xtwoend\HyMongo\Relations;
 
 use Hyperf\Utils\Arr;
 use Hyperf\Database\Model\Model;
-use Hyperf\Database\Model\Model as EloquentModel;
 use Hyperf\Database\Model\Builder;
 use Hyperf\Database\Model\Collection;
+use Hyperf\Database\Model\Relations\Constraint;
+use Hyperf\Database\Model\Model as EloquentModel;
 
 class BelongsToMany extends \Hyperf\Database\Model\Relations\BelongsToMany
 {
@@ -58,7 +59,7 @@ class BelongsToMany extends \Hyperf\Database\Model\Relations\BelongsToMany
      */
     public function addConstraints()
     {
-        if (static::$constraints) {
+        if (Constraint::isConstraint()) {
             $this->setWhere();
         }
     }
