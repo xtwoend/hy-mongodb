@@ -12,6 +12,7 @@ use MongoDB\BSON\UTCDateTime;
 use Xtwoend\HyMongo\Model\Builder;
 use Hyperf\Utils\ApplicationContext;
 use Hyperf\Database\ConnectionInterface;
+use Hyperf\DbConnection\Traits\HasContainer;
 use Hyperf\Database\Model\Model as BaseModel;
 use Hyperf\Database\Model\Relations\Relation;
 use Xtwoend\HyMongo\ConnectionResolverInterface;
@@ -19,7 +20,9 @@ use Xtwoend\HyMongo\Query\Builder as QueryBuilder;
 
 abstract class Model extends BaseModel
 {
-    use HybridRelations, EmbedsRelations;
+    use HybridRelations;
+    use EmbedsRelations;
+    use HasContainer;
 
     /**
      * The collection associated with the model.

@@ -2,12 +2,13 @@
 
 namespace Xtwoend\HyMongo\Relations;
 
+use Hyperf\DbConnection\Traits\HasContainer;
 use Hyperf\Database\Model\Relations\Constraint;
 use Hyperf\Database\Model\Model as EloquentModel;
 use Hyperf\Database\Model\Relations\MorphTo as EloquentMorphTo;
 
 class MorphTo extends EloquentMorphTo
-{
+{ 
     /**
      * @inheritdoc
      */
