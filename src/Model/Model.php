@@ -50,6 +50,13 @@ abstract class Model extends BaseModel implements Serializable
     protected $parentRelation;
 
     /**
+     * append auto id
+     *
+     * @var array
+     */
+    protected $appends = ['id'];
+    
+    /**
      * Get the database connection for the model.
      * You can write it by yourself.
      */

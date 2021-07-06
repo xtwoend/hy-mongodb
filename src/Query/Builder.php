@@ -835,7 +835,11 @@ class Builder extends BaseBuilder
     public function where($column, $operator = null, $value = null, $boolean = 'and')
     {
         $params = func_get_args();
-
+        
+        if($params[0] === 'id') {
+            $params[0] = '_id';
+        }
+        
         // Remove the leading $ from operators.
         if (func_num_args() == 3) {
             $operator = &$params[1];
@@ -1197,5 +1201,25 @@ class Builder extends BaseBuilder
     protected function compileWhereRaw(array $where)
     {
         return $where['sql'];
+    }
+
+    /**
+     * Undocumented function
+     *
+     * @param [type] $column
+     * @param [type] $values
+     * @param string $boolean
+     * @param boolean $not
+     * @return void
+     */
+    public function whereIn($column, $values, $boolean = 'and', $not = false)
+    {
+        $params = func_get_args();
+        
+        if($params[0] === 'id') {
+            $params[0] = '_id';
+        }
+
+        return call_user_func_array('parent::whereIn', $params); 
     }
 }
