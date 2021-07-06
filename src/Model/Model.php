@@ -2,6 +2,7 @@
 
 namespace Xtwoend\HyMongo\Model;
 
+use Serializable;
 use Carbon\Carbon;
 use Hyperf\Utils\Arr;
 use Hyperf\Utils\Str;
@@ -18,7 +19,7 @@ use Hyperf\Database\Model\Relations\Relation;
 use Xtwoend\HyMongo\ConnectionResolverInterface;
 use Xtwoend\HyMongo\Query\Builder as QueryBuilder;
 
-abstract class Model extends BaseModel
+abstract class Model extends BaseModel implements Serializable
 {
     use HybridRelations;
     use EmbedsRelations;
@@ -506,5 +507,16 @@ abstract class Model extends BaseModel
         }
 
         return parent::__call($method, $parameters);
+    }
+
+    // issue MongoDB/Driver/Manager can't serialize
+    public function serialize()
+    {
+        return serialize($this);
+    }
+
+    public function unserialize($serialized)
+    {
+        return unserialize($serialized);
     }
 }
