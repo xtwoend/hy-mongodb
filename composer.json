@@ -13,7 +13,7 @@
     "require": {
         "hyperf/database": "^2.1",
         "hyperf/db-connection": "^2.1",
-        "mongodb/mongodb": "~1.10.0"
+        "mongodb/mongodb": "~1.6.1"
     },
     "autoload": {
         "psr-4": {
