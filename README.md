@@ -5,7 +5,7 @@ Porting from [https://github.com/jenssegers/laravel-mongodb]
 
 This package adds functionalities to the Eloquent model and Query builder for MongoDB, using the original Laravel API. *This library extends the original Laravel classes, so it uses exactly the same methods.*
 
-- [Laravel MongoDB](#laravel-mongodb)
+- [Hyperf MongoDB](#hyperf-mongodb)
   - [Installation](#installation)
     - [Laravel version Compatibility](#laravel-version-compatibility)
     - [Laravel](#laravel)

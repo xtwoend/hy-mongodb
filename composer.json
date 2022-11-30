@@ -11,8 +11,8 @@
     ],
     "minimum-stability": "dev",
     "require": {
-        "hyperf/database": "^2.1",
-        "hyperf/db-connection": "^2.1",
+        "hyperf/database": "^2.1|^3.0",
+        "hyperf/db-connection": "^2.1|^3.0",
         "mongodb/mongodb": "~1.9.0"
     },
     "autoload": {
